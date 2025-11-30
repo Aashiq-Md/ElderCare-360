@@ -1,0 +1,71 @@
+{
+  "expo": {
+    "name": "ElderCareFinal",
+    "slug": "eldercarefinal",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses camera for emergency detection",
+        "NSLocationWhenInUseUsageDescription": "This app uses location for emergency services",
+        "NSCalendarsUsageDescription": "This app uses calendar for appointment reminders",
+        "NSContactsUsageDescription": "This app uses contacts for emergency notifications"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_CALENDAR",
+        "WRITE_CALENDAR",
+        "READ_CONTACTS",
+        "CALL_PHONE",
+        "SEND_SMS",
+        "CAMERA",
+        "RECORD_AUDIO",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_CALENDAR",
+        "WRITE_CALENDAR",
+        "READ_CONTACTS",
+        "CALL_PHONE",
+        "SEND_SMS"
+      ],
+      "package": "com.ash82.eldercarefinal"
+    },
+    "web": {
+      "favicon": "./assets/images/favicon.png",
+      "bundler": "metro"
+    },
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "83e0ac14-fe2f-421b-af5b-015b7a06b0b2"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/83e0ac14-fe2f-421b-af5b-015b7a06b0b2"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+node_modules/
+.expo/
+dist/
+web.html
+*.log
+.git/
+.DS_Store
+Thumbs.db
