@@ -116,7 +116,12 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { 
     flex: 1, 
-    backgroundColor: '#F8FAFC'
+    backgroundColor: '#F8FAFC',
+    ...(Platform.OS === 'web' && {
+      maxWidth: 400,
+      alignSelf: 'center',
+      minHeight: '100vh'
+    })
   },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 20, paddingTop: 60, backgroundColor: 'white', shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 4, elevation: 3 },
   greeting: { fontSize: 16, color: '#64748B' },

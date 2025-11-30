@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Modal, TextInput, Alert } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Modal, TextInput, Alert, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { storage } from '../utils/storage';
 
@@ -162,7 +162,15 @@ export default function MedicineScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#F8FAFC' },
+  container: { 
+    flex: 1, 
+    backgroundColor: '#F8FAFC',
+    ...(Platform.OS === 'web' && {
+      maxWidth: 400,
+      alignSelf: 'center',
+      minHeight: '100vh'
+    })
+  },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 20, paddingTop: 60, backgroundColor: 'white', shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 4, elevation: 3 },
   title: { fontSize: 24, fontWeight: 'bold', color: '#1E293B' },
   addButton: { backgroundColor: '#10B981', width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
