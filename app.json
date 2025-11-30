@@ -54,7 +54,9 @@
         "babel": {
           "include": ["@expo/vector-icons"]
         }
-      }
+      },
+      "output": "static",
+      "lang": "en"
     },
     "platforms": [
       "ios",
