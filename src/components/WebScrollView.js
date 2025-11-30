@@ -5,9 +5,10 @@ export default function WebScrollView({ children, style, contentContainerStyle }
   if (Platform.OS === 'web') {
     return (
       <View style={[{
-        height: '100vh',
-        overflow: 'scroll',
-        WebkitOverflowScrolling: 'touch'
+        minHeight: '100vh',
+        overflow: 'auto',
+        WebkitOverflowScrolling: 'touch',
+        paddingBottom: '50px'
       }, style]}>
         <View style={contentContainerStyle}>
           {children}

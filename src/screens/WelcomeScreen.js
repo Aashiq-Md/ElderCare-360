@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 import WebScrollView from '../components/WebScrollView';
+import WebButton from '../components/WebButton';
 import { Ionicons } from '@expo/vector-icons';
 import { storage } from '../utils/storage';
 
@@ -64,18 +65,10 @@ export default function WelcomeScreen({ navigation }) {
         </View>
       </View>
 
-      <TouchableOpacity 
-        style={styles.button} 
-        onPress={handleGetStarted}
-        activeOpacity={0.8}
-        {...(Platform.OS === 'web' && {
-          onMouseDown: handleGetStarted,
-          onTouchStart: handleGetStarted
-        })}
-      >
+      <WebButton style={styles.button} onPress={handleGetStarted}>
         <Text style={styles.buttonText}>Get Started</Text>
         <Ionicons name="arrow-forward" size={20} color="white" />
-      </TouchableOpacity>
+      </WebButton>
     </WebScrollView>
   );
 }
@@ -83,7 +76,12 @@ export default function WelcomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { 
     flex: 1, 
-    backgroundColor: '#F8FAFC'
+    backgroundColor: '#F8FAFC',
+    ...(Platform.OS === 'web' && {
+      maxWidth: 400,
+      alignSelf: 'center',
+      paddingBottom: 100
+    })
   },
   header: { backgroundColor: '#2563EB', alignItems: 'center', paddingTop: 60, paddingBottom: 40, paddingHorizontal: 20 },
   logoContainer: { width: 80, height: 80, borderRadius: 40, backgroundColor: 'rgba(255,255,255,0.2)', alignItems: 'center', justifyContent: 'center', marginBottom: 20 },

@@ -20,8 +20,8 @@
     }
     
     #root {
-      height: 100vh;
-      overflow: auto;
+      min-height: 100vh;
+      overflow: visible;
     }
     
     /* Mobile-like scrolling */
@@ -41,14 +41,15 @@
       body {
         font-size: 16px;
         -webkit-text-size-adjust: 100%;
+        position: relative;
+        overflow: auto;
       }
       
       #root {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        overflow: auto;
       }
     }
     
