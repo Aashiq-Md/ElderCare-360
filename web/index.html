@@ -1,29 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>ElderCare 360</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-    html, body {
-      height: 100%;
+    body {
       margin: 0;
       padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       overflow-x: hidden;
-      overflow-y: auto;
       -webkit-overflow-scrolling: touch;
     }
+    
     #root {
-      height: 100%;
-      overflow-y: auto;
+      height: 100vh;
+      overflow: auto;
     }
-    /* Fix React Native ScrollView on web */
-    .css-view-1dbjc4n {
-      overflow-y: auto !important;
-      height: 100vh !important;
+    
+    /* Mobile-like scrolling */
+    * {
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+    
+    /* Hide scrollbars but keep functionality */
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+      }
     }
   </style>
 </head>
