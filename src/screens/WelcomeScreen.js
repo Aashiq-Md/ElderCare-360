@@ -64,7 +64,15 @@ export default function WelcomeScreen({ navigation }) {
         </View>
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={handleGetStarted}>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={handleGetStarted}
+        activeOpacity={0.8}
+        {...(Platform.OS === 'web' && {
+          onMouseDown: handleGetStarted,
+          onTouchStart: handleGetStarted
+        })}
+      >
         <Text style={styles.buttonText}>Get Started</Text>
         <Ionicons name="arrow-forward" size={20} color="white" />
       </TouchableOpacity>
@@ -90,6 +98,25 @@ const styles = StyleSheet.create({
   mission: { backgroundColor: 'white', padding: 20, borderRadius: 16, marginTop: 20, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 4, elevation: 3 },
   missionTitle: { fontSize: 18, fontWeight: 'bold', color: '#2563EB', marginBottom: 12 },
   missionText: { fontSize: 16, color: '#64748B', lineHeight: 24 },
-  button: { backgroundColor: '#2563EB', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', margin: 20, padding: 16, borderRadius: 12, shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.2, shadowRadius: 8, elevation: 6 },
+  button: { 
+    backgroundColor: '#2563EB', 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    margin: 20, 
+    padding: 16, 
+    borderRadius: 12, 
+    shadowColor: '#000', 
+    shadowOffset: { width: 0, height: 4 }, 
+    shadowOpacity: 0.2, 
+    shadowRadius: 8, 
+    elevation: 6,
+    minHeight: 56,
+    ...(Platform.OS === 'web' && {
+      cursor: 'pointer',
+      userSelect: 'none',
+      WebkitTapHighlightColor: 'transparent'
+    })
+  },
   buttonText: { color: 'white', fontSize: 18, fontWeight: 'bold', marginRight: 8 }
 });
